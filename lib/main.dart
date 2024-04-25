@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'search_page.dart';
 
 void main() {
-  runApp(const GoogleBooks());
+  runApp(const GoogleBooksApp());
 }
 
-class GoogleBooks extends StatelessWidget {
-  const GoogleBooks({super.key});
+class GoogleBooksApp extends StatelessWidget {
+  const GoogleBooksApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,40 +14,11 @@ class GoogleBooks extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Google Books',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(76, 86, 106, 1.0)),
         useMaterial3: true,
       ),
       themeMode: ThemeMode.dark,
       home: const SearchPage(),
-    );
-  }
-}
-
-class SearchPage extends StatefulWidget {
-  const SearchPage({super.key});
-
-  @override
-  State<SearchPage> createState() => _SearchPageState();
-}
-
-class _SearchPageState extends State<SearchPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.secondary,
-        title: const Text(
-          'Google Books',
-          style: TextStyle(color: Colors.white70),
-        ),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
-        ),
-      ),
-      backgroundColor: const Color.fromRGBO(50, 50, 60, 1.0),
     );
   }
 }
